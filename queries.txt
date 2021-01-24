@@ -1,0 +1,34 @@
+# Loads the articles in the database
+
+CALL apoc.load.xml("file:///test.xml", '', {}, true)
+YIELD value
+
+UNWIND [item in value._dblp where item._type = "article"] as articles
+
+WITH articles.key as articlesKey,
+	articles.mdate as mdate,
+	articles.publtype as publtype,
+	articles.reviewid as reviewid,
+	articles.rating as rating,
+	articles.cdate as cdate,
+	[item in articles._article WHERE item._type = "title"][0] AS title,
+	[item in articles._article WHERE item._type = "author"] AS authors,
+	[item in articles._article WHERE item._type = "editor"] AS editors,
+	[item in articles._article WHERE item._type = "journal"][0] AS journal
+
+MERGE (a:Article {key: articlesKey, title: title._text})
+
+MERGE (j:Journal {name: journal._text})
+MERGE (j)-[:publish]->(a)
+
+
+FOREACH(author in authors |
+	MERGE (p:Person {name: author._text})
+	MERGE (p)-[:author]->(a)
+)
+
+
+FOREACH (editor in editors |
+	MERGE (p:Person {name: editor._text})
+	MERGE (p)-[:editor]->(a)
+)
