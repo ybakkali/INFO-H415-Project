@@ -1,0 +1,399 @@
+<dblp>
+<inproceedings mdate="2003-02-07" key="conf/db-workshops/AppelrathL88">
+    <author>Hans-Jürgen Appelrath</author>
+    <author>H. Lorek</author>
+    <title>Der Einsatz von Prolog-Werkzeugen für Geo-Datenbanken.</title>
+    <pages>147-165</pages>
+    <year>1988</year>
+    <crossref>conf/db-workshops/1988nsdb</crossref>
+    <booktitle>Non-Standard Datenbanken für Anwendungen der Graphischen Datenverarbeitung</booktitle>
+    <url>db/conf/db-workshops/nsdb1988.html#AppelrathL88</url>
+  </inproceedings>
+  <inproceedings mdate="2002-01-03" key="conf/db-workshops/BubenkoO85">
+    <author>Janis A. Bubenko Jr.</author>
+    <author>Istvan P. Orci</author>
+    <title>Knowledge Base Management Systems: A Database View.</title>
+    <pages>373-378</pages>
+    <year>1985</year>
+    <booktitle>Foundations of Knowledge Base Management (Xania)</booktitle>
+    <url>db/conf/db-workshops/xania85.html#BubenkoO85</url>
+  </inproceedings>
+  <article mdate="2002-01-03" key="tr/gte/TM-0014-06-88-165">
+    <ee>db/labs/gte/TM-0014-06-88-165.html</ee>
+    <author>Frank Manola</author>
+    <title>Distributed Object Management Technology.</title>
+    <journal>GTE Laboratories Incorporated</journal>
+    <volume>TM-0014-06-88-165</volume>
+    <month>June</month>
+    <year>1988</year>
+    <url>db/labs/gte/index.html#TM-0014-06-88-165</url>
+    <cdrom>GTE/MANO88.pdf</cdrom>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS94">
+    <author>Christoph Beierle</author>
+    <author>Udo Pletat</author>
+    <title>The Algebra of Feature Graph Specifications</title>
+    <journal>IWBS Report</journal>
+    <volume>94</volume>
+    <year>1989</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/LILOG12">
+    <author>Ipke Wachsmuth</author>
+    <title>On Structuring Domain-Specific Knowledge</title>
+    <journal>LILOG-Report</journal>
+    <volume>12</volume>
+    <year>1987</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/LILOG17">
+    <author>Christopher Habel</author>
+    <title>Prozedurale Aspekte der Wegplanung und Wegbeschreibung</title>
+    <journal>LILOG-Report</journal>
+    <volume>17</volume>
+    <year>1987</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/LILOG20">
+    <author>Klaus Rehkämper</author>
+    <title>Mentale Bilder und Wegbedeutungen</title>
+    <journal>LILOG-Report</journal>
+    <volume>20</volume>
+    <year>1987</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/LILOG32">
+    <author>Jean-Yves Lerner</author>
+    <author>Ulrich Schatz</author>
+    <title>Die Sloppy/Referenzielle Ambiguität: Bildungssyntax oder Diskursrepräsentationstheorie?</title>
+    <journal>LILOG-Report</journal>
+    <volume>32</volume>
+    <year>1988</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/LILOG47">
+    <author>Simone Pribbenow</author>
+    <title>Verträglichkeitsprüfungen für die Verarbeitung räumlichen Wissens</title>
+    <journal>LILOG-Report</journal>
+    <volume>47</volume>
+    <year>1988</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-09-22" key="tr/ibm/LILOG1a">
+    <author>Otthein Herzog</author>
+    <author>Claus-Rainer Rollinger</author>
+    <author>Peter H. Schmitt</author>
+    <author>Petra Steffens</author>
+    <author>Rudi Studer</author>
+    <author>Birgit Wesche</author>
+    <author>Brigitte Bartsch-Spörl</author>
+    <author>F. Günthner</author>
+    <author>Christopher Habel</author>
+    <author>Siegfried Kanngießer</author>
+    <author>Christian Rohrer</author>
+    <title>LILOG - Linguistische und logische Methoden für das maschinelle Verstehen des Deutschen - Projektbeschreibung</title>
+    <journal>LILOG-Report</journal>
+    <volume>1</volume>
+    <year>1986</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/LILOG59">
+    <author>Thomas Ludwig</author>
+    <title>Algebraical Optimization of FTA-Expressions</title>
+    <journal>LILOG-Report</journal>
+    <volume>59</volume>
+    <year>1988</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-02-03" key="tr/ibm/LILOGM2">
+    <author>Brigitte Bartsch-Spörl</author>
+    <title>Zur Systemarchitektur von LILOG</title>
+    <journal>LILOG-Memo</journal>
+    <volume>2</volume>
+    <year>1987</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2003-02-03" key="tr/ibm/LILOGM4">
+    <author>Brigitte Bartsch-Spörl</author>
+    <title>Zur Behandlung komplexer Objekte in LILOG</title>
+    <journal>LILOG-Memo</journal>
+    <volume>4</volume>
+    <year>1987</year>
+    <publisher>IBM Deutschland GmbH</publisher>
+  </article>
+  <article mdate="2002-01-03" key="tr/ibm/GH24-5012">
+    <title>SQL/Data System, General Information Manual.</title>
+    <journal>IBM Publication</journal>
+    <volume>GH24-5012</volume>
+    <publisher>IBM Corporation, White Plains, NY</publisher>
+    <year>1981</year>
+    <ee>db/labs/ibm/GH24-5012.html</ee>
+    <cdrom>ibmTR/gh24-5012.pdf</cdrom>
+  </article>
+  <article mdate="2002-01-03" key="tr/ibm/RJ1579">
+    <author>Jim Gray</author>
+    <author>Vera Watson</author>
+    <title>A Shared Segment and Interprocess Communication Facility for VM/370</title>
+    <journal>IBM Research Report</journal>
+    <volume>RJ1579</volume>
+    <month>May</month>
+    <year>1975</year>
+    <ee>db/labs/ibm/RJ1579.html</ee>
+    <cdrom>ibmTR/rj1579.pdf</cdrom>
+  </article>
+  <article mdate="2002-01-03" key="tr/ibm/RJ2555">
+    <author>Irving L. Traiger</author>
+    <author>Jim Gray</author>
+    <author>Cesare A. Galtieli</author>
+    <author>Bruce G. Lindsay</author>
+    <title>Transactions and Consistency in Distributed Database Systems.</title>
+    <journal>IBM Research Report</journal>
+    <volume>RJ2555</volume>
+    <month>June</month>
+    <year>1979</year>
+    <ee>db/labs/ibm/RJ2555.html</ee>
+    <cdrom>ibmTR/rj2555.pdf</cdrom>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS110">
+    <author>Karl Dotzek</author>
+    <title>Strategien zur Pronominalisierung</title>
+    <journal>IWBS Report</journal>
+    <volume>110</volume>
+    <year>1990</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-02-03" key="tr/ibm/IWBS112">
+    <editor>Thomas Wetter</editor>
+    <editor>Rolf Engelbrecht</editor>
+    <editor>Reinhold Haux</editor>
+    <editor>Frank Puppe</editor>
+    <editor>Hans Voß</editor>
+    <title>Wissensbasierte Systeme in der Medizin: GMDS/GI, Abstracts des 1. gemeinsamen Workshops der AG Expertensysteme der GMDS und der FG Diagnostik und Klassifikation im GI-Fachausschuß 1.5, 29.-30. März 1990, Heidelberg</title>
+    <journal>IWBS Report</journal>
+    <volume>112</volume>
+    <year>1990</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS113">
+    <author>Christoph Beierle</author>
+    <author>Ulrich Hedtstück</author>
+    <author>Udo Pletat</author>
+    <author>Peter H. Schmitt</author>
+    <author>Jörg H. Siekmann</author>
+    <title>An Order-Sorted Logic for Knowledge Representation Systems</title>
+    <journal>IWBS Report</journal>
+    <volume>113</volume>
+    <year>1990</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS115">
+    <author>Egon Börger</author>
+    <title>A Logical Operational Semantics of Full Prolog Part II: Built-in Predicates for Database Manipulations</title>
+    <journal>IWBS Report</journal>
+    <volume>115</volume>
+    <year>1990</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS126">
+    <author>Otthein Herzog</author>
+    <title>The Institute for Knowledge Based Systems in the IBM Germany Scientific Center</title>
+    <journal>IWBS Report</journal>
+    <volume>126</volume>
+    <year>1990</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS132">
+    <author>Stefan Böttcher</author>
+    <title>An Inference Engine for Function Free Logic Programs</title>
+    <journal>IWBS Report</journal>
+    <volume>132</volume>
+    <year>1990</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS176">
+    <author>Ralph Scheubrein</author>
+    <title>Integration eines deduktiven Datenbanksystems in eine Logikprogrammiersprache</title>
+    <journal>IWBS Report</journal>
+    <volume>176</volume>
+    <year>1991</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS201">
+    <author>Thomas Ludwig</author>
+    <author>Stefan Benzschawel</author>
+    <author>Erich Gehlen</author>
+    <title>Differential Closure Computation for General Horn-Clause Queries</title>
+    <journal>IWBS Report</journal>
+    <volume>201</volume>
+    <year>1991</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS204">
+    <author>Karl Schlechta</author>
+    <title>Results on Non-Monotonic Logics.</title>
+    <journal>IWBS Report</journal>
+    <volume>204</volume>
+    <year>1992</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS208">
+    <author>Bernhard Beckert</author>
+    <title>Konzeption und Implementierung von Gleichheit für einen tableau-basierten Theorem-Beweiser</title>
+    <journal>IWBS Report</journal>
+    <volume>208</volume>
+    <year>1992</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS221">
+    <author>Ulrike Rackow</author>
+    <title>On the Treatment of Compounds in Machine Translation. A Study</title>
+    <journal>IWBS Report</journal>
+    <volume>221</volume>
+    <year>1992</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS223">
+    <author>Peter Gerstl</author>
+    <title>Mengenkonzepte in Unifikationsgrammatiken</title>
+    <journal>IWBS Report</journal>
+    <volume>223</volume>
+    <year>1992</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS225">
+    <author>Ulrike Rackow</author>
+    <author>Ido Dagan</author>
+    <author>Ulrike Schwall</author>
+    <title>A Combined Symbolic-Empirical Apprach for the Automatic Translation of Compounds</title>
+    <journal>IWBS Report</journal>
+    <volume>225</volume>
+    <year>1992</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-01-31" key="tr/ibm/IWBS237">
+    <author>Birgit Wendholt</author>
+    <title>DInG - ein Domänen-orientierter Inkrementeller und Integrierter Generator für kohärente Texte</title>
+    <journal>IWBS Report</journal>
+    <volume>237</volume>
+    <year>1992</year>
+    <publisher>IBM Germany Science Center, Institute for Knowledge Based Systems</publisher>
+  </article>
+  <article mdate="2003-04-01" key="tr/trier/MI00-11">
+    <author>Lothar Breuer</author>
+    <title>Operator-Geometric Solutions for the M/G/k Queue and its Variants</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>00-11</volume>
+    <year>2000</year>
+  </article>
+  <article mdate="2003-04-01" key="tr/trier/MI00-12">
+    <author>Christopher Lusena</author>
+    <author>Judy Goldsmith</author>
+    <author>Martin Mundhenk</author>
+    <title>Nonapproximability Results for Partially Observable Markov Decision Processes</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>00-12</volume>
+    <year>2000</year>
+  </article>
+  <article mdate="2003-04-01" key="tr/trier/MI01-09">
+    <author>Christoph Meinel</author>
+    <author>Harald Sack</author>
+    <author>Arno Wagner</author>
+    <title>WWW.BDD-PORTAL.ORG: An Experimentation Platform for Binary Decision Diagram Algorithms</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>01-09</volume>
+    <year>2001</year>
+  </article>
+  <article mdate="2003-02-13" key="tr/trier/MI02-19">
+    <author>Lothar Breuer</author>
+    <title>Approximating Semi-Markov Processes by MAPs, with an Application on Queueing Theory</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>02-19</volume>
+    <year>2002</year>
+  </article>
+  <article mdate="2003-02-13" key="tr/trier/MI02-21">
+    <author>Christoph Meinel</author>
+    <author>Volker Schillings</author>
+    <title>tele-TASK - Teleteaching Anywhere Solution Kit</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>02-21</volume>
+    <year>2002</year>
+  </article>
+  <article mdate="2003-05-07" key="tr/trier/MI92-01">
+    <author>Carsten Damm</author>
+    <author>Matthias Krause</author>
+    <author>Christoph Meinel</author>
+    <author>Stephan Waack</author>
+    <title>Separating Counting Communication Complexity Classes</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>92-01</volume>
+    <year>1992</year>
+  </article>
+  <article mdate="2003-02-24" key="tr/trier/MI92-15">
+    <author>Klaus Jansen</author>
+    <title>On the Complexity of a Licence Constrained Job Assignment Problem</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>92-15</volume>
+    <year>1992</year>
+  </article>
+  <article mdate="2003-02-25" key="tr/trier/MI92-24">
+    <author>Matthias Heinkenschloss</author>
+    <title>Numerical Solution of a Semilinear Parabolic Control Problem</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>92-24</volume>
+    <year>1992</year>
+  </article>
+  <article mdate="2003-02-27" key="tr/trier/MI93-02">
+    <author>Dirk Frosch-Wilke</author>
+    <title>Exact Analysis of Closed Synchronized Systems of Stochastic Sequential Processes</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>93-02</volume>
+    <year>1993</year>
+  </article>
+  <article mdate="2003-02-27" key="tr/trier/MI93-09">
+    <author>Anna Slobodová</author>
+    <author>Christoph Meinel</author>
+    <title>Efficient Manipulation of FBDDs by Means of a Modified OBDD-Package</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>93-09</volume>
+    <year>1993</year>
+  </article>
+  <article mdate="2003-02-28" key="tr/trier/MI93-16">
+    <author>Ulrich Hertrampf</author>
+    <title>Complexity Classes with Finite Acceptance Types</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>93-16</volume>
+    <year>1993</year>
+  </article>
+  <article mdate="2003-03-19" key="tr/trier/MI94-03">
+    <author>Jochen Bern</author>
+    <author>Christoph Meinel</author>
+    <author>Anna Slobodová</author>
+    <title>Some Heuristics for Generating Tree-like FBDD Types</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>94-03</volume>
+    <year>1994</year>
+  </article>
+  <article mdate="2003-03-19" key="tr/trier/MI94-12">
+    <author>Carsten Damm</author>
+    <author>Markus Holzer</author>
+    <title>Inductive Counting below LOGSPACE</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>94-12</volume>
+    <year>1994</year>
+  </article>
+  <article mdate="2003-03-19" key="tr/trier/MI94-13">
+    <author>Reiner Horst</author>
+    <author>Nguyen V. Thoai</author>
+    <title>An Integer Concave Minimization Approach for the Minimum Concave Cost Capacitated Flow Problem on Networks</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>94-13</volume>
+    <year>1994</year>
+  </article>
+  <article mdate="2003-03-28" key="tr/trier/MI96-07">
+    <author>Ulrich Hertrampf</author>
+    <title>On the Acceptance Power of Groups and Semigroups</title>
+    <journal>Universität Trier, Mathematik/Informatik, Forschungsbericht</journal>
+    <volume>96-07</volume>
+    <year>1996</year>
+  </article>
+</dblp>
