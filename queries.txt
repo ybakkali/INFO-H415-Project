@@ -178,12 +178,21 @@ SET a.publnr = publnr._text
 
 # 1. Give the number of publications for each type
 
+MATCH (n)
+WHERE labels(n)[0] in ["Article", "Inproceedings", "Proceedings", "Book", "Incollection", "PHDThesis", "MasterThesis", "WWW"]
+RETURN labels(n) as Type, count(n) as Number
+
+MATCH (n:Publication)
+RETURN labels(n)[0] as Type, count(n) as Number
 
 
 # 2. Give the name of authors
 
 MATCH (p:Person)-[:author]->()
 RETURN p.name as Name
+
+MATCH ()-[:authored_by]->(p:author)
+RETURN DISTINCT p.author as Name
 
 
 # 3. Give the names of authors who are also editors
@@ -195,11 +204,45 @@ RETURN p.name as Name
 # 4. Give the authors ordered by the number of publications, in descending order
 
 MATCH (p:Person)-[a:author]->()
-WITH p, COUNT(a) as c ORDER BY c DESC
+WITH p, COUNT(a) as c
+ORDER BY c DESC
 RETURN p.name as Name
 
 
 # 5. Give the authors and the number of publications for each type
+
+MATCH (p:Person)-[:author]->(a)
+RETURN p.name as Author, labels(a)[0] as Type, COUNT(a)
+ORDER BY p.name
+
+
+OPTIONAL MATCH (p:author)<-[:authored_by]-(a:article)
+WITH p, COUNT(a) as ca
+
+OPTIONAL MATCH (p)<-[:authored_by]-(b:inproceedings)
+WITH p, ca, COUNT(b) as cb
+
+OPTIONAL MATCH (p)<-[:authored_by]-(c:proceedings)
+WITH p, ca, cb, COUNT(c) as cc
+
+OPTIONAL MATCH (p)<-[:authored_by]-(d:book)
+WITH p, ca, cb, cc, COUNT(d) as cd
+
+OPTIONAL MATCH (p)<-[:authored_by]-(e:incollection)
+WITH p, ca, cb, cc, cd, COUNT(e) as ce
+
+OPTIONAL MATCH (p)<-[:authored_by]-(f:phdthesis)
+WITH p, ca, cb, cc, cd, ce, COUNT(f) as cf
+
+OPTIONAL MATCH (p)<-[:authored_by]-(g:mastersthesis)
+WITH p, ca, cb, cc, cd, ce, cf, COUNT(g) as cg
+
+OPTIONAL MATCH (p)<-[:authored_by]-(h:www)
+WITH p, ca, cb, cc, cd, ce, cf, cg, COUNT(h) as ch
+
+RETURN p.author as Author, ca as Article, cb as Inproceedings,
+cc as Proceedings, cd as Book, ce as Incollection, cf as PHDThesis,
+cg as MastersThesis, ch as WWW
 
 
 # 6. Give the author(s) having the highest number of publications
@@ -211,6 +254,51 @@ MATCH (p:Person)-[a:author]->()
 WITH p, COUNT(a) as c, m
 WHERE c = m
 RETURN p.name as Name
+
+
+7. Give for each author the total number of publications and the number of publications by type
+
+OPTIONAL MATCH (p:author)<-[:authored_by]-(a:article)
+WITH p, COUNT(a) as ca
+
+OPTIONAL MATCH (p)<-[:authored_by]-(b:inproceedings)
+WITH p, ca, COUNT(b) as cb
+
+OPTIONAL MATCH (p)<-[:authored_by]-(c:proceedings)
+WITH p, ca, cb, COUNT(c) as cc
+
+OPTIONAL MATCH (p)<-[:authored_by]-(d:book)
+WITH p, ca, cb, cc, COUNT(d) as cd
+
+OPTIONAL MATCH (p)<-[:authored_by]-(e:incollection)
+WITH p, ca, cb, cc, cd, COUNT(e) as ce
+
+OPTIONAL MATCH (p)<-[:authored_by]-(f:phdthesis)
+WITH p, ca, cb, cc, cd, ce, COUNT(f) as cf
+
+OPTIONAL MATCH (p)<-[:authored_by]-(g:mastersthesis)
+WITH p, ca, cb, cc, cd, ce, cf, COUNT(g) as cg
+
+OPTIONAL MATCH (p)<-[:authored_by]-(h:www)
+WITH p, ca, cb, cc, cd, ce, cf, cg, COUNT(h) as ch
+
+WITH p, ca, cb, cc, cd, ce, cf, cg, ch, ca+cb+cd+ce+cf+cg+ch as Total
+
+RETURN p.author as Author, ca as Article, cb as Inproceedings,
+cc as Proceedings, cd as Book, ce as Incollection, cf as PHDThesis,
+cg as MastersThesis, ch as WWW, Total
+
+
+
+8. Give the list of proceedings that have at least one editor that is also author of at least one article in the proceedings
+
+
+
+9. Give for each author the number of co-authors and the number of joint publications with each of them
+
+
+
+10. Give the distance of author "Hector Garcia-Molina" with respect to other authors. Two authors that write together a publication have distance 0. If an author a write a publication with author b and if author b write a publication with author c, then a is at distance 1 from c if a and c have not published together
 
 
 
