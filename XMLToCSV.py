@@ -106,8 +106,8 @@ def open_outputfiles(elements: set, element_attributes: dict, output_filename: s
 
 
 def get_element_attributes(xml_file, elements: set) -> dict:
-    context = etree.iterparse(xml_file, dtd_validation=False, events=('start', 'end'), attribute_defaults=True,
-                              load_dtd=True)
+    context = etree.iterparse(xml_file, no_network=False, dtd_validation=True, events=('start', 'end'), attribute_defaults=True,
+                              load_dtd=True, recover=True)
     # turn it into an iterator
     context = iter(context)
     # get the root element
@@ -149,7 +149,7 @@ def get_element_attributes(xml_file, elements: set) -> dict:
 def parse_xml(xml_file, elements: set, output_files: Dict[str, csv.DictWriter], relation_attributes: set,
               annotate: bool = False) \
         -> Union[Tuple[dict, int, dict, dict], Tuple[dict, int]]:
-    context = etree.iterparse(xml_file, dtd_validation=False, events=('start', 'end'))
+    context = etree.iterparse(xml_file, no_network=False, dtd_validation=True, events=('start', 'end'), recover=True)
     # turn it into an iterator
     context = iter(context)
     # get the root element

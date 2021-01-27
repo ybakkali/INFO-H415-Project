@@ -182,39 +182,28 @@ MATCH (n)
 WHERE labels(n)[0] in ["Article", "Inproceedings", "Proceedings", "Book", "Incollection", "PHDThesis", "MasterThesis", "WWW"]
 RETURN labels(n) as Type, count(n) as Number
 
-MATCH (n:Publication)
-RETURN labels(n)[0] as Type, count(n) as Number
-
 
 # 2. Give the name of authors
 
-MATCH (p:Person)-[:author]->()
-RETURN p.name as Name
-
-MATCH ()-[:authored_by]->(p:author)
-RETURN DISTINCT p.author as Name
+MATCH (a:author)<-[:authored_by]-()
+RETURN DISTINCT a.author as Name
 
 
 # 3. Give the names of authors who are also editors
 
-MATCH ()<-[:editor]-(p:Person)-[:author]->()
-RETURN p.name as Name
+MATCH ()-[:edited_by]->(a:author)<-[:authored_by]-()
+RETURN a.author as Name
 
 
 # 4. Give the authors ordered by the number of publications, in descending order
 
-MATCH (p:Person)-[a:author]->()
+MATCH (p:author)<-[a:authored_by]-()
 WITH p, COUNT(a) as c
 ORDER BY c DESC
-RETURN p.name as Name
+RETURN p.author as Name
 
 
 # 5. Give the authors and the number of publications for each type
-
-MATCH (p:Person)-[:author]->(a)
-RETURN p.name as Author, labels(a)[0] as Type, COUNT(a)
-ORDER BY p.name
-
 
 OPTIONAL MATCH (p:author)<-[:authored_by]-(a:article)
 WITH p, COUNT(a) as ca
@@ -258,7 +247,9 @@ RETURN p.name as Name
 
 7. Give for each author the total number of publications and the number of publications by type
 
-OPTIONAL MATCH (p:author)<-[:authored_by]-(a:article)
+MATCH (p:author)
+
+OPTIONAL MATCH (p)<-[:authored_by]-(a:article)
 WITH p, COUNT(a) as ca
 
 OPTIONAL MATCH (p)<-[:authored_by]-(b:inproceedings)
@@ -282,7 +273,7 @@ WITH p, ca, cb, cc, cd, ce, cf, COUNT(g) as cg
 OPTIONAL MATCH (p)<-[:authored_by]-(h:www)
 WITH p, ca, cb, cc, cd, ce, cf, cg, COUNT(h) as ch
 
-WITH p, ca, cb, cc, cd, ce, cf, cg, ch, ca+cb+cd+ce+cf+cg+ch as Total
+WITH p, ca, cb, cc, cd, ce, cf, cg, ch, ca+cb+cc+cd+ce+cf+cg+ch as Total
 
 RETURN p.author as Author, ca as Article, cb as Inproceedings,
 cc as Proceedings, cd as Book, ce as Incollection, cf as PHDThesis,
@@ -310,16 +301,10 @@ MATCH p = ShortestPath((a1)-[:authored_by *]-(a2))
 RETURN a1.author as Author_1, a2.author as Author_2, length(p)/2-1 as Distance
 
 
-
-
-
-
-
 11. Give the number of publications by school
 
 MATCH (s:school)-[]-(b)
 RETURN s.school as School, COUNT(b) as Number
-
 
 
 12. Give the number of publications by journal
@@ -340,7 +325,80 @@ WHERE cb = mca
 RETURN j.journal as Journal, collect(p.author) as Authors, cb as Number
 
 
-14. The most cited articles
+14. The number of publication that composed the series
+
+MATCH (s:series)-[:is_part_of]-(p)
+RETURN s.series as Series, COUNT(p) as Number ORDER BY Number DESC
+
+
+15. The number of publication of each type that composed the series
+
+MATCH (s:series)
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(a:article)
+WITH s, COUNT(a) as ca
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(b:inproceedings)
+WITH s, ca, COUNT(b) as cb
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(c:proceedings)
+WITH s, ca, cb, COUNT(c) as cc
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(d:book)
+WITH s, ca, cb, cc, COUNT(d) as cd
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(e:incollection)
+WITH s, ca, cb, cc, cd, COUNT(e) as ce
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(f:phdthesis)
+WITH s, ca, cb, cc, cd, ce, COUNT(f) as cf
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(g:mastersthesis)
+WITH s, ca, cb, cc, cd, ce, cf, COUNT(g) as cg
+
+OPTIONAL MATCH (s)<-[:is_part_of]-(h:www)
+WITH s, ca, cb, cc, cd, ce, cf, cg, COUNT(h) as ch
+
+WITH s, ca, cb, cc, cd, ce, cf, cg, ch, ca+cb+cc+cd+ce+cf+cg+ch as Total
+
+RETURN s.series as Series, ca as Article, cb as Inproceedings,
+cc as Proceedings, cd as Book, ce as Incollection, cf as PHDThesis,
+cg as MastersThesis, ch as WWW, Total
+
+
+16. The number of publications published by the publisher
+
+
+
+17. The top 5 authors with the longest interval of time between their first and last publications
+
+MATCH (a:author)
+MATCH (a)<-[:authored_by]-(p)
+WITH a, MIN(p.year) as minp
+MATCH (a)<-[:authored_by]-(p)
+WITH a, minp, MAX(p.year) as maxp
+RETURN a.author as Author, maxp - minp as Interval ORDER BY Interval DESC LIMIT 5
+
+
+
+18. The number of publications by year
+
+MATCH (y:year)-[:published_in_year]-(p)
+RETURN y.year as Year, COUNT(p) as Number ORDER BY y.year
+
+
+19.
+
+
+20. Top 5 of the most cited articles
+
+WIP
+
+MATCH (c:cite)<-[a:has_citation]-()
+WITH c, COUNT(a) as ca
+MATCH (p)
+WHERE p.key = c
+RETURN p.title as Publication, ca as Number
 
 
 
