@@ -333,14 +333,14 @@ def get_high_level_type(types: set) -> str:
 
 def generate_neo4j_import_command(elements: set, relations: set, relation_alias: dict, output_filename: str):
     (path, ext) = os.path.splitext(output_filename)
-    command = 'neo4j-admin import --mode=csv --database=dblp.db --delimiter ";" --array-delimiter "|" ' \
+    command = 'neo4j-admin import --database=dblp.db --multiline-fields=true --delimiter ";" --array-delimiter "|" ' \
               '--id-type INTEGER'
     for element in elements:
-        command += ' --nodes:%s "%s_%s_header%s,%s_%s%s"' % (element, path, element, ext, path, element, ext)
+        command += ' --nodes=%s="%s_%s_header%s,%s_%s%s"' % (element, path, element, ext, path, element, ext)
     for relation in relations:
-        command += ' --nodes:%s "%s_%s%s"' % (relation, path, relation, ext)
+        command += ' --nodes=%s="%s_%s%s"' % (relation, path, relation, ext)
         predicate = relation_alias[relation]
-        command += ' --relationships:%s "%s_%s_%s%s"' % (predicate, path, relation, predicate, ext)
+        command += ' --relationships=%s="%s_%s_%s%s"' % (predicate, path, relation, predicate, ext)
     return command
 
 
