@@ -179,9 +179,8 @@ SET a.publnr = publnr._text
 # 1. Give the number of publications for each type
 
 MATCH (n)
-WHERE labels(n)[0] in ["Article", "Inproceedings", "Proceedings", "Book", "Incollection", "PHDThesis", "MasterThesis", "WWW"]
+WHERE labels(n)[0] in ["article", "inproceedings", "proceedings", "book", "incollection", "phdthesis", "masterthesis", "www"]
 RETURN labels(n) as Type, count(n) as Number
-
 
 # 2. Give the name of authors
 
@@ -205,28 +204,28 @@ RETURN p.author as Name
 
 # 5. Give the authors and the number of publications for each type
 
-OPTIONAL MATCH (p:author)<-[:authored_by]-(a:article)
+OPTIONAL MATCH (p:author)<--(a:article)
 WITH p, COUNT(a) as ca
 
-OPTIONAL MATCH (p)<-[:authored_by]-(b:inproceedings)
+OPTIONAL MATCH (p)<--(b:inproceedings)
 WITH p, ca, COUNT(b) as cb
 
-OPTIONAL MATCH (p)<-[:authored_by]-(c:proceedings)
+OPTIONAL MATCH (p)<--(c:proceedings)
 WITH p, ca, cb, COUNT(c) as cc
 
-OPTIONAL MATCH (p)<-[:authored_by]-(d:book)
+OPTIONAL MATCH (p)<--(d:book)
 WITH p, ca, cb, cc, COUNT(d) as cd
 
-OPTIONAL MATCH (p)<-[:authored_by]-(e:incollection)
+OPTIONAL MATCH (p)<--(e:incollection)
 WITH p, ca, cb, cc, cd, COUNT(e) as ce
 
-OPTIONAL MATCH (p)<-[:authored_by]-(f:phdthesis)
+OPTIONAL MATCH (p)<--(f:phdthesis)
 WITH p, ca, cb, cc, cd, ce, COUNT(f) as cf
 
-OPTIONAL MATCH (p)<-[:authored_by]-(g:mastersthesis)
+OPTIONAL MATCH (p)<--(g:mastersthesis)
 WITH p, ca, cb, cc, cd, ce, cf, COUNT(g) as cg
 
-OPTIONAL MATCH (p)<-[:authored_by]-(h:www)
+OPTIONAL MATCH (p)<--(h:www)
 WITH p, ca, cb, cc, cd, ce, cf, cg, COUNT(h) as ch
 
 RETURN p.author as Author, ca as Article, cb as Inproceedings,
@@ -236,13 +235,23 @@ cg as MastersThesis, ch as WWW
 
 # 6. Give the author(s) having the highest number of publications
 
-MATCH (p:Person)-[a:author]->()
+MATCH (p:author)<-[a:authored_by]-()
 WITH p, COUNT(a) as c
 WITH max(c) as m
-MATCH (p:Person)-[a:author]->()
-WITH p, COUNT(a) as c, m
+MATCH (p)<-[a]-()
+WITH COUNT(a) as c, m
 WHERE c = m
-RETURN p.name as Name
+RETURN p.author as Name
+
+MATCH (person:Person)-[:BOUGHT]->(food:FoodItem)
+WITH person, food, count(food) as timesBought
+WITH person, apoc.agg.maxItems(food, timesBought) as maxData
+RETURN person, maxData.items as favoriteFoods, maxData.value as mostBoughtCount
+
+MATCH (p:author)<-[a:authored_by]-(b)
+WITH p, b, count(b) as c
+WITH p, apoc.agg.maxItems(b, c) as m
+RETURN p.author
 
 
 7. Give for each author the total number of publications and the number of publications by type
@@ -387,7 +396,13 @@ MATCH (y:year)-[:published_in_year]-(p)
 RETURN y.year as Year, COUNT(p) as Number ORDER BY y.year
 
 
-19.
+19. The average number of authors by publication type
+
+MATCH (n)-[a]-()
+WHERE labels(n)[0] in ["article", "inproceedings", "proceedings", "book", "incollection", "phdthesis", "masterthesis", "www"]
+with n, count(a) as ca
+with n, ca, count(n) as cb
+return labels(n)[0] as Type, sum(cb * ca) / sum(cb) as `Authors average`
 
 
 20. Top 5 of the most cited articles
@@ -400,7 +415,21 @@ MATCH (p)
 WHERE p.key = c
 RETURN p.title as Publication, ca as Number
 
+Back up queries:
+
+1. Type, authors number, occurence number
+
+MATCH (n)-[a]-()
+WHERE labels(n)[0] in ["article", "inproceedings", "proceedings", "book", "incollection", "phdthesis", "masterthesis", "www"]
+with n, count(a) as ca
+return labels(n)[0] as Type, ca as authors, count(n) as number
+order by Type, authors
 
 
+to do 
 
-
+MATCH (a1:editor), (a2:author)
+where a1.editor = a2.author
+WITH head(collect([a1,a2])) as nodes
+CALL apoc.refactor.mergeNodes(nodes,{properties:"combine", mergeRels:true}) yield node
+return node
