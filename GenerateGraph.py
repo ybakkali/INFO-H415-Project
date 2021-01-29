@@ -9,10 +9,23 @@ TagToNode = {
 	"www":"WWW","person":"Person","data":"Data"}
 
 
+def progress_bar(total, progress):
+    bar_length, status = 20, ""
+    progress = progress / total
+
+    if progress >= 1:
+        progress, status = 1, "\r\n"
+    block = int(round(bar_length * progress))
+    text = "\rProcessing of {} items [{}] {:.0f}% {}".format(total,
+                                                             "#" * block + "-" * (bar_length - block),
+                                                             round(progress * 100, 0), status)
+    sys.stdout.write(text)
+    sys.stdout.flush()
+
 def createPublicationNode(publication):
 	query = "MERGE (a:Publication" + " {key: \"" + publication.attrib["key"] + "\"})\n"	
 
-	query += "WITH a CALL apoc.create.addLabels( a, [\"" + TagToNode[publication.tag] + "\"]) YIELD node\n"
+	query += "SET a:" + TagToNode[publication.tag] + "\n"
 	# key mdate publtype reviewid rating cdate
 
 	if "mdate" in publication.keys():
@@ -117,18 +130,21 @@ def main(file):
 
 	i = 0
 	for publication in root:
+		
+		progress_bar(len(root),i + 1) 
 		query = createPublicationNode(publication)
 
 		for info in publication:
 			query += createRelations(info) + "WITH a\n"
 	
-		print()
+
 		# print(query)
 		session = driver.session()
 		response = list(session.run(query+"RETURN NULL"))
 		session.close()
 		i += 1
-		print(round(i/len(root)*100, 2), "% Completed")
+
+
 
 	driver.close()
 		
