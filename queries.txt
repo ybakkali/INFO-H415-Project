@@ -428,8 +428,30 @@ order by Type, authors
 
 to do 
 
+create (a:person:editor {editor : "a"}), 
+	  (b:person:author {author : "a"}),
+      (aa:person:editor {editor : "aa"}),
+	  (bb:person:author {author : "aa"}), 
+      (aaa:person:editor {editor : "aaa"}), 
+      (bbb:person:author {author : "aaa"}), 
+      (aaaa:person:editor {editor : "aaaa"}), (bbbb:person:author {author : "aaaa"}),
+      (a)<-[:edited_by]-(:book {title : "1"}),
+      (b)<-[:authored_by]-(:article {title : "1"}),
+      (aa)<-[:edited_by]-(:book {title : "11"}),
+      (bb)<-[:authored_by]-(:article {title : "11"}),
+      (aaa)<-[:edited_by]-(:book {title : "111"}),
+      (bbb)<-[:authored_by]-(:article {title : "111"}),
+      (aaaa)<-[:edited_by]-(:book {title : "1111"}),
+      (bbbb)<-[:authored_by]-(:article {title : "1111"})
+
 MATCH (a1:editor), (a2:author)
-where a1.editor = a2.author
-WITH head(collect([a1,a2])) as nodes
-CALL apoc.refactor.mergeNodes(nodes,{properties:"combine", mergeRels:true}) yield node
-return node
+where a1.editor = a2.author and not a1:author
+WITH collect([a1,a2])[..1000] as n
+unwind n as nodes
+CALL apoc.refactor.mergeNodes(nodes,{
+    properties:"combine",
+    mergeRels:true
+})
+YIELD node
+RETURN count(*)
+
