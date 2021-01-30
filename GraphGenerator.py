@@ -122,6 +122,7 @@ def createRelations(info):
 
 def main(file, username, password):
 	driver = GraphDatabase.driver("neo4j://127.0.0.1:7687", auth=(username, password))
+	session = driver.session()
 	
 	tree = ET.parse(file)
 	root = tree.getroot()
@@ -135,11 +136,11 @@ def main(file, username, password):
 		for info in publication:
 			query += createRelations(info) + "WITH a\n"
 	
-		session = driver.session()
-		response = list(session.run(query+"RETURN NULL"))
-		session.close()
+		session.run(query+"RETURN NULL")
+		
 		i += 1
 
+	session.close()
 	driver.close()
 		
 main(sys.argv[1], sys.argv[2], sys.argv[3])
