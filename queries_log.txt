@@ -1,0 +1,45 @@
+db 50000
+
+1- Started streaming 8 records after 72 ms and completed after 141 ms.
+2- Started streaming 69697 records after 11 ms and completed after 14 ms, displaying first 1000 rows.
+3- Started streaming 713 records after 10 ms and completed after 89 ms.
+4- Started streaming 69916 records after 14 ms and completed after 16 ms, displaying first 1000 rows.
+5- Started streaming 35 records after 65 ms and completed after 99 ms.
+6- Started streaming 3 records after 22 ms and completed after 559 ms.
+7- Started streaming 69916 records after 49 ms and completed after 53 ms, displaying first 1000 rows.
+8- Started streaming 50 records after 11 ms and completed after 67 ms.
+9- Started streaming 61865 records after 14 ms and completed after 18 ms, displaying first 1000 rows.
+10- Started streaming 26176 records after 13 ms and completed after 194 ms, displaying first 1000 rows.
+11- Started streaming 4 records after 9 ms and completed after 9 ms.
+12- Started streaming 372 records after 9 ms and completed after 64 ms.
+13- Started streaming 371 records after 20 ms and completed after 280 ms.
+14- Started streaming 20 records after 10 ms and completed after 14 ms.
+15- Started streaming 33 records after 288 ms and completed after 431 ms.
+16- Started streaming 35 records after 1572 ms and completed after 1660 ms.
+17- Started streaming 5 records after 18 ms and completed after 1842 ms.
+18- Started streaming 66 records after 10 ms and completed after 144 ms.
+19- Started streaming 7 records after 64 ms and completed after 301 ms.
+20- Started streaming 688 records after 9 ms and completed after 208 ms.
+
+db 30000
+
+1- Started streaming 8 records after 51 ms and completed after 74 ms.
+2- Started streaming 48723 records after 10 ms and completed after 14 ms, displaying first 1000 rows.
+3- Started streaming 597 records after 10 ms and completed after 65 ms.
+4- Started streaming 48972 records after 14 ms and completed after 15 ms, displaying first 1000 rows.
+5- Started streaming 33 records after 66 ms and completed after 86 ms.
+6- Started streaming 1 records after 91 ms and completed after 484 ms.
+7- Started streaming 48972 records after 208 ms and completed after 214 ms, displaying first 1000 rows.
+8- Started streaming 48 records after 25 ms and completed after 68 ms.
+9- Started streaming 43997 records after 13 ms and completed after 18 ms, displaying first 1000 rows.
+10- Started streaming 13969 records after 14 ms and completed after 601 ms, displaying first 1000 rows.
+11- Started streaming 4 records after 1 ms and completed after 2 ms.
+12- Started streaming 7 records in less than 1 ms and completed after 1 ms.
+13- Started streaming 6 records after 19 ms and completed after 21 ms.
+14- Started streaming 14 records after 1 ms and completed after 2 ms.
+15- Started streaming 29 records after 267 ms and completed after 394 ms.
+16- Started streaming 18 records after 1215 ms and completed after 1251 ms.
+17- Started streaming 5 records after 1 ms and completed after 867 ms.
+18- Started streaming 45 records after 7 ms and completed after 87 ms.
+19- Started streaming 5 records after 84 ms and completed after 208 ms.
+20- Started streaming 294 records in less than 1 ms and completed after 67 ms.
