@@ -23,4 +23,4 @@ RETURN p.title as title,
       f.name as series,
       g.name as school,
       p.chapter as chapter,
-      p.publnr as publnr
+      p.publnr as publnr;
