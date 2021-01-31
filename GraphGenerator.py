@@ -127,7 +127,7 @@ def main(file, username, password):
 	tree = ET.parse(file)
 	root = tree.getroot()
 
-	n = 50000
+	n = 15000
 	xml_list = [elem for elem in root][:n]
 
 	i = 0

@@ -1,40 +1,40 @@
-INFO-H415/Queries//query_10.cypher
-490 rows available after 1 ms, consumed after another 1954 ms
-INFO-H415/Queries//query_11.cypher
-4 rows available after 1 ms, consumed after another 0 ms
-INFO-H415/Queries//query_12.cypher
-7 rows available after 1 ms, consumed after another 0 ms
-INFO-H415/Queries//query_13.cypher
-6 rows available after 1 ms, consumed after another 0 ms
-INFO-H415/Queries//query_14.cypher
-12 rows available after 1 ms, consumed after another 1 ms
-INFO-H415/Queries//query_15.cypher
-28 rows available after 1 ms, consumed after another 20 ms
-INFO-H415/Queries//query_16.cypher
-15 rows available after 1 ms, consumed after another 11 ms
-INFO-H415/Queries//query_17.cypher
-5 rows available after 1 ms, consumed after another 230 ms
-INFO-H415/Queries//query_18.cypher
-45 rows available after 1 ms, consumed after another 30 ms
-INFO-H415/Queries//query_19.cypher
-5 rows available after 1 ms, consumed after another 33 ms
-INFO-H415/Queries//query_1.cypher
-8 rows available after 1 ms, consumed after another 3 ms
-INFO-H415/Queries//query_20.cypher
-59 rows available after 1 ms, consumed after another 37 ms
-INFO-H415/Queries//query_2.cypher
-27463 rows available after 0 ms, consumed after another 2 ms
-INFO-H415/Queries//query_3.cypher
-264 rows available after 1 ms, consumed after another 11 ms
-INFO-H415/Queries//query_4.cypher
-27636 rows available after 1 ms, consumed after another 1 ms
-INFO-H415/Queries//query_5.cypher
-31 rows available after 2 ms, consumed after another 1 ms
-INFO-H415/Queries//query_6.cypher
-1 row available after 1 ms, consumed after another 75 ms
-INFO-H415/Queries//query_7.cypher
-27636 rows available after 1 ms, consumed after another 4 ms
-INFO-H415/Queries//query_8.cypher
-19 rows available after 1 ms, consumed after another 3 ms
-INFO-H415/Queries//query_9.cypher
-24562 rows available after 1 ms, consumed after another 3 ms
+../Queries/query_10.cypher
+490 rows available after 236 ms, consumed after another 2550 ms
+../Queries/query_11.cypher
+4 rows available after 86 ms, consumed after another 5 ms
+../Queries/query_12.cypher
+7 rows available after 41 ms, consumed after another 4 ms
+../Queries/query_13.cypher
+6 rows available after 170 ms, consumed after another 13 ms
+../Queries/query_14.cypher
+12 rows available after 25 ms, consumed after another 2 ms
+../Queries/query_15.cypher
+28 rows available after 279 ms, consumed after another 84 ms
+../Queries/query_16.cypher
+15 rows available after 847 ms, consumed after another 36 ms
+../Queries/query_17.cypher
+5 rows available after 54 ms, consumed after another 381 ms
+../Queries/query_18.cypher
+45 rows available after 16 ms, consumed after another 29 ms
+../Queries/query_19.cypher
+5 rows available after 196 ms, consumed after another 39 ms
+../Queries/query_1.cypher
+8 rows available after 63 ms, consumed after another 4 ms
+../Queries/query_20.cypher
+59 rows available after 23 ms, consumed after another 40 ms
+../Queries/query_2.cypher
+27463 rows available after 15 ms, consumed after another 3 ms
+../Queries/query_3.cypher
+264 rows available after 12 ms, consumed after another 12 ms
+../Queries/query_4.cypher
+27636 rows available after 17 ms, consumed after another 1 ms
+../Queries/query_5.cypher
+31 rows available after 24 ms, consumed after another 1 ms
+../Queries/query_6.cypher
+1 row available after 27 ms, consumed after another 70 ms
+../Queries/query_7.cypher
+27636 rows available after 85 ms, consumed after another 3 ms
+../Queries/query_8.cypher
+19 rows available after 19 ms, consumed after another 3 ms
+../Queries/query_9.cypher
+24562 rows available after 28 ms, consumed after another 3 ms
