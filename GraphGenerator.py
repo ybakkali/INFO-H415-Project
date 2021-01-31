@@ -127,10 +127,12 @@ def main(file, username, password):
 	tree = ET.parse(file)
 	root = tree.getroot()
 
+	n = 50000
+	xml_list = [elem for elem in root][:n]
+
 	i = 0
-	for publication in root:
-		
-		progress_bar(len(root),i + 1) 
+	for publication in xml_list:
+		progress_bar(len(xml_list), i + 1)
 		query = createPublicationNode(publication)
 
 		for info in publication:
